@@ -1,1 +1,122 @@
-ij
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello</title>
+    <style>
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 cột */
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-container .image-item {
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .caption {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .page-btn-container {
+            text-align: center;
+        }
+
+        .page-btn {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .page-btn:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .q1{
+            text-align: center;
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="q1">Hello</h1>
+
+    <!-- Nội dung trang -->
+    <div id="page1" class="image-container">
+        <div class="image-item">
+            <img src="./Images/Ảnh/apple-ipad-hd-4.jpg" alt="Ảnh 1">
+            <p class="caption">Chú thích 1</p>
+        </div>
+        <div class="image-item">
+            <img src="./" alt="Ảnh 2">
+            <p class="caption">Chú thích 2</p>
+        </div>
+        <div class="image-item">
+            <img src="./img-1330905164-1.jpg" alt="Ảnh 3">
+            <p class="caption">Chú thích 3</p>
+        </div>
+        <div class="image-item">
+            <img src="./img-1330905164-1.jpg" alt="Ảnh 4">
+            <p class="caption">Chú thích 4</p>
+        </div>
+        <div class="image-item">
+            <img src="./news_3654_samsung_183-150.jpg" alt="Ảnh 5">
+            <p class="caption">Chú thích 5</p>
+        </div>
+        <div class="image-item">
+            <img src="./news_3654_samsung_183-150.jpg" alt="Ảnh 6">
+            <p class="caption">Chú thích 6</p>
+        </div>
+    </div>
+
+    <div id="page2" class="image-container hidden">
+        <div class="image-item">
+            <img src="./nokia-4.jpg" alt="Ảnh 7">
+            <p class="caption">Chú thích 7</p>
+        </div>
+        <div class="image-item">
+            <img src="./nokia-4.jpg" alt="Ảnh 8">
+            <p class="caption">Chú thích 8</p>
+        </div>
+    </div>
+
+    <!-- Chọn trang -->
+    <div class="page-btn-container">
+        <button class="page-btn" onclick="showPage(1)">Trang 1</button>
+        <button class="page-btn" onclick="showPage(2)">Trang 2</button>
+    </div>
+
+    <script>
+        function showPage(pageNumber) {
+            if (pageNumber === 1) {
+                document.getElementById('page1').classList.remove('hidden');
+                document.getElementById('page2').classList.add('hidden');
+            } else {
+                document.getElementById('page1').classList.add('hidden');
+                document.getElementById('page2').classList.remove('hidden');
+            }
+        }
+
+        // Hiển thị trang 1 mặc định
+        showPage(1);
+    </script>
+</body>
+</html>
+
